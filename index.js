@@ -80,8 +80,6 @@ function nanoS3 (options, cb) {
   form.append('acl', 'public-read')
   form.append('file', data)
 
-  console.log({ target, form })
-
   form.submit(target, cb)
 }
 
