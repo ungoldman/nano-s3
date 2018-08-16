@@ -1,7 +1,7 @@
 {
   "name": "nano-s3",
   "description": "Upload a file to S3.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Nate Goldman <ungoldman@gmail.com> (https://ungoldman.com/)",
   "bugs": {
     "url": "https://github.com/ungoldman/nano-s3/issues"
