@@ -64,7 +64,7 @@ Params:
 - `options` - *Object*:
   - `accessKeyId` - *String*: AWS access key ID with write access to the host and bucket.
   - `secretAccessKey` - *String*: AWS secret access key for signing.
-  - `host` - *String*: AWS host to upload the files to, e.g. `s3-us-west-2.amazonaws.com`.
+  - `host` - *String*: AWS host to upload the files to, e.g. `s3.us-west-1.amazonaws.com`.
   - `bucket` - *String*: Your AWS bucket name.
   - `maxFileSize` - *Number*: Max file size (optional). Default: 2MB (`2 * 1024 * 1024`).
   - `filename` - *String*: Name of file to upload.
