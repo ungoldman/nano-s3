@@ -9,8 +9,8 @@ Upload a file to S3.
 [1]: https://nodejs.org/api/documentation.html#documentation_stability_index
 [2]: https://img.shields.io/npm/v/nano-s3.svg?style=flat-square
 [3]: https://npmjs.org/package/nano-s3
-[4]: https://img.shields.io/travis/toddself/nano-s3/master.svg?style=flat-square
-[5]: https://travis-ci.org/toddself/nano-s3
+[4]: https://img.shields.io/travis/ungoldman/nano-s3/master.svg?style=flat-square
+[5]: https://travis-ci.org/ungoldman/nano-s3
 [8]: http://img.shields.io/npm/dm/nano-s3.svg?style=flat-square
 [9]: https://npmjs.org/package/nano-s3
 [10]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
