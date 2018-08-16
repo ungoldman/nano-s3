@@ -1,27 +1,31 @@
 {
   "name": "nano-s3",
-  "version": "1.0.2",
   "description": "Upload a file to S3.",
-  "main": "index.js",
-  "scripts": {
-    "test": "standard"
-  },
-  "repository": {
-    "type": "git",
-    "url": " "
-  },
-  "keywords": [
-    "aws",
-    "s3",
-    "upload",
-    "file"
-  ],
+  "version": "1.0.2",
   "author": "Nate Goldman <ungoldman@gmail.com> (https://ungoldman.com/)",
-  "license": "ISC",
-  "devDependencies": {
-    "standard": "^11.0.1"
+  "bugs": {
+    "url": "https://github.com/ungoldman/nano-s3/issues"
   },
   "dependencies": {
     "form-data": "^2.3.2"
+  },
+  "devDependencies": {
+    "standard": "^11.0.1"
+  },
+  "homepage": "https://github.com/ungoldman/nano-s3#readme",
+  "keywords": [
+    "aws",
+    "file",
+    "s3",
+    "upload"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ungoldman/nano-s3.git"
+  },
+  "scripts": {
+    "test": "standard"
   }
 }
