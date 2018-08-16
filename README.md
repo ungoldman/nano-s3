@@ -35,18 +35,26 @@ const nanoS3 = require('nano-s3')
 
 const options = {
   // AWS Config
+  // Environment variables strongly recommended for keys
   accessKeyId: 'abc',
   secretAccessKey: 'xyz',
   host: 's3.us-west-1.amazonaws.com',
   bucket: 'your-bucket-name',
 
-  // file info
-  filename: 'image.jpg', // this will be the name of the uploaded file on S3
-  contentType: `image/jpeg`, // MIME type of file
-  data: fs.readFileSync(path.join(__dirname, 'image.jpg')), // this should be a Buffer
-  path: 'path/in/bucket', // directory path in bucket to upload to (optional)
+  // Name of uploaded file on S3
+  filename: 'image.jpg',
 
-  // max file size, defaults to 2MB (optional). required by AWS for upload policy.
+  // MIME type of file
+  contentType: `image/jpeg`,
+
+  // File data (Should be a Buffer)
+  data: fs.readFileSync(path.join(__dirname, 'image.jpg')),
+
+  // Directory path in bucket (optional)
+  path: 'path/in/bucket',
+
+  // Max file size, default 2MB (optional).
+  // Required by AWS for upload policy.
   maxFileSize: 2 * 1024 * 1024
 }
 
@@ -66,11 +74,11 @@ Params:
   - `secretAccessKey` - *String*: AWS secret access key for signing.
   - `host` - *String*: AWS host to upload the files to, e.g. `s3.us-west-1.amazonaws.com`.
   - `bucket` - *String*: Your AWS bucket name.
-  - `maxFileSize` - *Number*: Max file size (optional). Default: 2MB (`2 * 1024 * 1024`).
   - `filename` - *String*: Name of file to upload.
-  - `path` - *String*: Path in bucket to upload to (optional). Default: none (root).
   - `contentType` - *String*: MIME type of file.
   - `data` - *Buffer*: File data. Should be a Buffer.
+  - `path` - *String*: Path in bucket to upload to (optional). Default: none (root).
+  - `maxFileSize` - *Number*: Max file size (optional). Default: 2MB (`2 * 1024 * 1024`).
 - `cb` - *Function*:
   - `err` - *Error*: `null` if everything went fine, `Error` object if something went wrong.
   - `res` - [*Response*](https://nodejs.org/api/http.html#http_class_http_serverresponse): `http` response object.
