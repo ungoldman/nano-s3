@@ -27,6 +27,8 @@ Sometimes you just need a small lib to do a simple task.
   - 7.4 KB unpacked
   - compare to [`aws-sdk`](https://www.npmjs.com/package/aws-sdk)'s 30.7 MB
 
+Thanks to [toddself](https://github.com/toddself) for providing the [original code](https://github.com/ungoldman/nano-s3/commit/ec3bb4c5df16582cc4441243e9437f2a2258c9d2) that this was adapted from!
+
 ## Installation
 
 ```
