@@ -20,6 +20,13 @@ Upload a file to S3.
 
 Sometimes you just need a small lib to do a simple task.
 
+- uploads a file to [s3](https://aws.amazon.com/s3/)
+- that's it
+- no other features
+- very small!
+  - 7.4 KB unpacked
+  - compare to [`aws-sdk`](https://www.npmjs.com/package/aws-sdk)'s 30.7 MB
+
 ## Installation
 
 ```
