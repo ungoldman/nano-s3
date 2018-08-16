@@ -1,0 +1,27 @@
+{
+  "name": "nano-s3",
+  "version": "0.0.0",
+  "description": "Upload a file to S3.",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "keywords": [
+    "aws",
+    "s3",
+    "upload",
+    "file"
+  ],
+  "author": "Nate Goldman <ungoldman@gmail.com> (https://ungoldman.com/)",
+  "license": "ISC",
+  "devDependencies": {
+    "standard": "^11.0.1"
+  },
+  "dependencies": {
+    "form-data": "^2.3.2"
+  }
+}
