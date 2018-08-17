@@ -7,10 +7,13 @@
     "url": "https://github.com/ungoldman/nano-s3/issues"
   },
   "dependencies": {
-    "form-data": "^2.3.2"
+    "form-data": "^2.3.2",
+    "is-buffer": "^2.0.3"
   },
   "devDependencies": {
-    "standard": "^11.0.1"
+    "standard": "^11.0.1",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1"
   },
   "homepage": "https://github.com/ungoldman/nano-s3#readme",
   "keywords": [
@@ -26,6 +29,6 @@
     "url": "git+https://github.com/ungoldman/nano-s3.git"
   },
   "scripts": {
-    "test": "standard"
+    "test": "standard && tape test.js | tap-spec"
   }
 }
