@@ -1,5 +1,6 @@
 const crypto = require('crypto')
 const FormData = require('form-data')
+const isBuffer = require('is-buffer')
 
 module.exports = nanoS3
 
@@ -9,7 +10,11 @@ module.exports = nanoS3
  * @param  {function} cb - callback
  */
 function nanoS3 (options, cb) {
+  options = options || {}
   cb = cb || function () {}
+
+  const err = validate(options)
+  if (err) return cb(err)
 
   const {
     // AWS host to upload the files to, e.g. `s3.us-west-1.amazonaws.com`
@@ -110,4 +115,50 @@ function getExpiration () {
   const d = new Date()
   d.setDate(d.getDate() + 365 * 5)
   return d.toISOString()
+}
+
+/**
+ * Option validation for main export.
+ * @param  {object} options - nanoS3 options
+ * @return {null|Error} - null if everything went fine, Error if something went wrong
+ */
+function validate (options) {
+  const required = [
+    'host',
+    'bucket',
+    'accessKeyId',
+    'secretAccessKey',
+    'filename',
+    'contentType',
+    'data'
+  ]
+
+  const missing = required.filter(key => options[key] == null)
+
+  if (missing.length > 0) {
+    return new Error(`Missing required option(s): ${missing.join(', ')}`)
+  }
+
+  const requiredTypes = {
+    host: isString,
+    bucket: isString,
+    accessKeyId: isString,
+    secretAccessKey: isString,
+    maxFileSize: isNumber,
+    filename: isString,
+    path: isString,
+    contentType: isString,
+    data: isBuffer
+  }
+
+  const badTypes = Object.keys(options).filter(key => !requiredTypes[key](options[key]))
+
+  if (badTypes.length > 0) {
+    return new Error(`Invalid option(s): ${badTypes.join(', ')}`)
+  }
+
+  return null
+
+  function isString (v) { return typeof v === 'string' }
+  function isNumber (v) { return typeof v === 'number' }
 }
