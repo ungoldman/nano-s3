@@ -12,6 +12,7 @@ test('required keys', t => {
 test('required types', t => {
   t.plan(2)
   nanoS3({
+    protocol: 0,
     host: 0,
     bucket: 0,
     accessKeyId: 0,
@@ -30,8 +31,9 @@ test('required types', t => {
 test('works?', t => {
   t.plan(3)
   nanoS3({
+    protocol: 'https',
     host: 's3.amazonaws.com',
-    bucket: 'bad-bucket',
+    bucket: 'nano-s3-test-bad-bucket',
     accessKeyId: 'xyz789',
     secretAccessKey: 'abc123',
     filename: 'badfile.txt',

@@ -47,6 +47,9 @@ const options = {
   // Environment variables strongly recommended for keys
   accessKeyId: 'abc',
   secretAccessKey: 'xyz',
+
+  // protocol is optional, defaults to https
+  protocol: 'https',
   host: 's3.us-west-1.amazonaws.com',
   bucket: 'your-bucket-name',
 
@@ -81,6 +84,7 @@ Params:
 - `options` - *Object*:
   - `accessKeyId` - *String*: AWS access key ID with write access to the host and bucket.
   - `secretAccessKey` - *String*: AWS secret access key for signing.
+  - `protocol` - *String*: protocol to use for AWS URL. Default: `'https'`.
   - `host` - *String*: AWS host to upload the files to, e.g. `s3.us-west-1.amazonaws.com`.
   - `bucket` - *String*: Your AWS bucket name.
   - `filename` - *String*: Name of file to upload.

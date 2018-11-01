@@ -17,6 +17,9 @@ function nanoS3 (options, cb) {
   if (err) return cb(err)
 
   const {
+    // protocol for URL, default is https
+    protocol = 'https',
+
     // AWS host to upload the files to, e.g. `s3.us-west-1.amazonaws.com`
     host,
 
@@ -48,7 +51,7 @@ function nanoS3 (options, cb) {
   const form = new FormData()
 
   // Full URL to the bucket.
-  const target = `https://${host}/${bucket}`
+  const target = `${protocol}://${host}/${bucket}`
 
   // Policy expiration. Currently set to five years from time of upload.
   const expiration = getExpiration()
@@ -140,6 +143,7 @@ function validate (options) {
   }
 
   const requiredTypes = {
+    protocol: isString,
     host: isString,
     bucket: isString,
     accessKeyId: isString,
